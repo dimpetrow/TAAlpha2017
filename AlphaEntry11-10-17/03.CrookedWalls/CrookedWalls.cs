@@ -30,6 +30,8 @@ class CrookedWalls
         Console.WriteLine(sum);
         Console.WriteLine(sum);
         Console.WriteLine(sum);
+        Console.WriteLine(sum);
+        Console.WriteLine(sum);
     }
 }
 
