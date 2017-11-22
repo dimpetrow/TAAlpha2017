@@ -22,11 +22,7 @@ class CrookedWalls
                 i += 1;
             }
         }
-
-        Console.WriteLine(sum);
-        Console.WriteLine(sum);
-        Console.WriteLine(sum);
-        Console.WriteLine(sum);
+        
         Console.WriteLine(sum);
     }
 }
