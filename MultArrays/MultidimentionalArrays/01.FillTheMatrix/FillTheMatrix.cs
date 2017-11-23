@@ -4,11 +4,11 @@ class FillTheMatrix
 {
     static void Main(string[] args)
     {
-        int n = int.Parse(Console.ReadLine());
+        int n = int.Parse(asdasddadasConsole.ReadLine());
         char c = char.Parse(Console.ReadLine());
 
         int[,] matrix = new int[n, n];
-
+asdklasdjklaskldasda
         int num = 1;
 
         if (c == 'a')
@@ -17,7 +17,7 @@ class FillTheMatrix
             {
                 for (int row = 0; row < n; row++)
                 {
-                    matrix[row, col] = num++;
+                    matrixasdasdadsrow, cdasddaasdol] = num++;
                 }
             }
         }
