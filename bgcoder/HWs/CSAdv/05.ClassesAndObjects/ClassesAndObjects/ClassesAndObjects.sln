@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.SumNumbers", "08.SumNumbers\08.SumNumbers.csproj", "{762E5163-AFD9-42B2-97D0-375601A4598A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.TriangleSurfByTwoSidesNAngle", "06.TriangleSurfByTwoSidesNAngle\06.TriangleSurfByTwoSidesNAngle.csproj", "{690382C7-0779-4528-8FF9-481A283AB55B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{762E5163-AFD9-42B2-97D0-375601A4598A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762E5163-AFD9-42B2-97D0-375601A4598A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762E5163-AFD9-42B2-97D0-375601A4598A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762E5163-AFD9-42B2-97D0-375601A4598A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690382C7-0779-4528-8FF9-481A283AB55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690382C7-0779-4528-8FF9-481A283AB55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690382C7-0779-4528-8FF9-481A283AB55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690382C7-0779-4528-8FF9-481A283AB55B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A51FB80F-FD06-43F7-8FC2-348A57077F17}
+	EndGlobalSection
+EndGlobal
