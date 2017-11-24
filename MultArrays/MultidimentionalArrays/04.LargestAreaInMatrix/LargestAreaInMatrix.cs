@@ -8,6 +8,8 @@ class LargestAreaInMatrix
         string input = Console.ReadLine();
         int n = int.Parse(input.Split(' ')[0]);
         int m = int.Parse(input.Split(' ')[1]);
+
+        bool[,] visited = new bool[n, m]; // Visited Elements
         int?[,] matrix = new int?[n, m];
         for (int row = 0; row < n; row++)
         {
@@ -19,10 +21,8 @@ class LargestAreaInMatrix
         }
         //Read Matrix
 
-        List<int> stackRows = new List<int>();
-        List<int> stackCols = new List<int>();
-        List<string> comeFrom = new List<string>();
-        string notGoingThere = "";
+        List<int> stackRows = new List<int>(n * m);
+        List<int> stackCols = new List<int>(n * m);
 
         int maxAreaEquals = 1;
 
@@ -31,11 +31,11 @@ class LargestAreaInMatrix
         {
             for (int c = 0; c < m; c++)
             {
-                if (matrix[r, c] != null)
+                if (!visited[r, c])
                 {
+                    visited[r, c] = true;
                     stackRows.Add(r);
                     stackCols.Add(c);
-                    comeFrom.Add(notGoingThere);
 
                     int curR = r;
                     int curC = c;
@@ -47,12 +47,11 @@ class LargestAreaInMatrix
 
                     while (hasEquals)
                     {
-                        if ((curC + 1 < m) && (currentEl == matrix[curR, curC + 1]) && (comeFrom[comeFrom.Count - 1] != "right"))
+                        if ((curC + 1 < m) && (currentEl == matrix[curR, curC + 1]) && !visited[curR, curC + 1])
                         {
                             curC++;
-                            notGoingThere = "left";
-                            comeFrom.Add(notGoingThere);
 
+                            visited[curR, curC] = true;
                             currentMax++;
 
                             stackRows.Add(curR);
@@ -62,12 +61,11 @@ class LargestAreaInMatrix
                         }
                         //Check Equal Right
 
-                        if ((curR + 1 < n) && (currentEl == matrix[curR + 1, curC]) && (comeFrom[comeFrom.Count - 1] != "down"))
+                        if ((curR + 1 < n) && (currentEl == matrix[curR + 1, curC]) && !visited[curR + 1, curC])
                         {
                             curR++;
-                            notGoingThere = "up";
-                            comeFrom.Add(notGoingThere);
 
+                            visited[curR, curC] = true;
                             currentMax++;
 
                             stackRows.Add(curR);
@@ -77,12 +75,11 @@ class LargestAreaInMatrix
                         }
                         //Check Equal Down
 
-                        if ((curC - 1 >= 0) && (currentEl == matrix[curR, curC - 1]) && (comeFrom[comeFrom.Count - 1] != "left"))
+                        if ((curC - 1 >= 0) && (currentEl == matrix[curR, curC - 1]) && !visited[curR, curC - 1])
                         {
                             curC--;
-                            notGoingThere = "right";
-                            comeFrom.Add(notGoingThere);
 
+                            visited[curR, curC] = true;
                             currentMax++;
 
                             stackRows.Add(curR);
@@ -92,12 +89,11 @@ class LargestAreaInMatrix
                         }
                         //Check Equal Left
 
-                        if ((curR - 1 >= 0) && (currentEl == matrix[curR - 1, curC]) && (comeFrom[comeFrom.Count - 1] != "up"))
+                        if ((curR - 1 >= 0) && (currentEl == matrix[curR - 1, curC]) && !visited[curR - 1, curC])
                         {
                             curR--;
-                            notGoingThere = "down";
-                            comeFrom.Add(notGoingThere);
 
+                            visited[curR, curC] = true;
                             currentMax++;
 
                             stackRows.Add(curR);
@@ -106,13 +102,10 @@ class LargestAreaInMatrix
                             continue;
                         }
                         //Check Equal Up
-                        
+
 
                         stackRows.RemoveAt(stackRows.Count - 1);
                         stackCols.RemoveAt(stackCols.Count - 1);
-
-                        matrix[curR, curC] = null;
-
 
                         if (stackRows.Count != 0)
                         {
@@ -123,7 +116,6 @@ class LargestAreaInMatrix
                         {
                             hasEquals = false;
                         }
-                        comeFrom.RemoveAt(comeFrom.Count - 1);
                     }
 
                     if (currentMax > maxAreaEquals)
